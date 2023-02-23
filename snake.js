@@ -82,6 +82,7 @@ function show() {
 }
 
 function update() {
+  snake.move();
 
 }
 
@@ -103,3 +104,21 @@ function createRect(x,y,width, height, color) {
   canvasContext.fillStyle = color;
   canvasContext.fillRect(x, y, width, height) 
 } 
+
+window.addEventListener('keydown', () => {
+  setTimeout(() => {
+    if(event.keyCode == 37 && snake.rotateX != 1) {
+      snake.rotateX = -1;
+      snake.rotateY = 0;
+    } else if(event.keyCode == 38 && snake.rotateY != 1) {
+      snake.rotateX = 0;
+      snake.rotateY = -1;
+    } else if(event.keyCode == 39 && snake.rotateX != -1) {
+      snake.rotateX = 1;
+      snake.rotateY = 0;
+    } else if(event.keyCode == 40 && snake.rotateY != -1) {
+      snake.rotateX = 0;
+      snake.rotateY = 1;
+    } 
+  }, 1)
+})
