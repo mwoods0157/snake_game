@@ -66,7 +66,7 @@ var snake = new Snake();
 
 var apple = new Apple();
 
-var canvasContent = canvas.getContext('2d');
+var canvasContext = canvas.getContext('2d');
 
 window.onload = () => {
   gameLoop();
